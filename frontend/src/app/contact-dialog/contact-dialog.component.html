@@ -1,0 +1,68 @@
+<p-dialog header="Add User" [modal]="true" [style]="{ width: '5cm;' }" [visible]="contact() != null"
+    (visibleChange)="contact.set(null)">
+    @if (contact() != null) {
+    @let c = contact()!;
+    <div>
+        <p>Personal</p>
+        <div class="flex">
+            <p-floatlabel class="flex-1" variant="in">
+                <input style="width: 100%;" pInputText [(ngModel)]="c.academicTitle" />
+                <label>Academic Title</label>
+            </p-floatlabel>
+            <p-floatlabel class="flex-1" variant="in">
+                <input style="width: 100%;" pInputText [(ngModel)]="c.firstName" />
+                <label>First Name</label>
+            </p-floatlabel>
+            <p-floatlabel class="flex-1" variant="in">
+                <input style="width: 100%;" pInputText [(ngModel)]="c.lastName" />
+                <label>Last Name</label>
+            </p-floatlabel>
+        </div>
+        <p>Company</p>
+        <div class="flex">
+            <p-floatlabel class="grow" variant="in">
+                <input style="width: 100%;" pInputText [(ngModel)]="c.company" />
+                <label>Company</label>
+            </p-floatlabel>
+            <p-floatlabel class="grow" variant="in">
+                <input style="width: 100%;" pInputText [(ngModel)]="c.department" />
+                <label>Department</label>
+            </p-floatlabel>
+        </div>
+        <p>Address</p>
+        <div class="flex">
+            <p-floatlabel class="grow" variant="in">
+                <input style="width: 100%;" pInputText [(ngModel)]="c.street" />
+                <label>Street</label>
+            </p-floatlabel>
+        </div>
+        <div class="flex">
+            <p-floatlabel class="grow" variant="in">
+                <input style="width: 100%;" pInputText [(ngModel)]="c.zipCode" />
+                <label>ZIP Code</label>
+            </p-floatlabel>
+            <p-floatlabel class="grow" variant="in">
+                <input style="width: 100%;" pInputText [(ngModel)]="c.cityTown" />
+                <label>City / Town</label>
+            </p-floatlabel>
+            <app-country-select [(selectedCountry)]="c.nationalCode" class="grow"></app-country-select>
+        </div>
+        <p>Contact</p>
+        <div class="flex">
+            <p-floatlabel class="grow" variant="in">
+                <input style="width: 100%;" pInputText [(ngModel)]="c.mail" />
+                <label>Mail</label>
+            </p-floatlabel>
+            <p-floatlabel class="grow" variant="in">
+                <input style="width: 100%;" pInputText [(ngModel)]="c.phone" />
+                <label>Phone</label>
+            </p-floatlabel>
+            <p-floatlabel class="grow" variant="in">
+                <input style="width: 100%;" pInputText [(ngModel)]="c.web" />
+                <label>Web</label>
+            </p-floatlabel>
+        </div>
+    </div>
+    }
+    <p-button (onClick)="save.emit()">Save</p-button>
+</p-dialog>

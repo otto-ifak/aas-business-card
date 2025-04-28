@@ -1,0 +1,19 @@
+<p-select [options]="allCountries()" [(ngModel)]="selectedCountry" optionLabel="name" placeholder="Country"
+    [style]="{width: '100%'}">
+    <ng-template #selectedItem let-selectedOption>
+        <div>
+            @let selected = countries.get(selectedOption);
+            @if(selected) {
+            <img [src]="selected.icon" style="width: 18px" />
+            <div>{{ selected.name }}</div>
+            }
+        </div>
+    </ng-template>
+    <ng-template #item let-country>
+        <div>
+            @let item=countries.get(country)!;
+            <img [src]="item.icon" style="width: 18px" />
+            <div>{{ item.name }}</div>
+        </div>
+    </ng-template>
+</p-select>

@@ -1,0 +1,48 @@
+<p-dialog header="Business Card" [modal]="true" [style]="{ width: '5cm;' }" [visible]="contact() != null"
+    (visibleChange)="onClosed.emit()">
+    <p>
+        Here is your business card.
+        You may either want to print it directly or copy the QR code into your own template.
+    </p>
+    @if(contact()){
+    @let c = contact()!;
+    <div class="card-container">
+        <div class="flex place-items-center gap-5">
+            <div>
+                <img src="/aas.png" style="width: 120px; height: 70px">
+                <app-qr-code style="position: relative; left: 10px; top: -10px" [value]="makeUrl(c)"></app-qr-code>
+            </div>
+            <div>
+                <div>
+                    <h1>{{c.fullName()}}</h1>
+                    <p>{{c.department}}</p>
+                </div>
+                <div style="margin-top: 10px;">
+                    <h1>{{c.company}}</h1>
+                    <p>{{c.street}}</p>
+                    <p>{{c.cityTown}} {{c.zipCode}}</p>
+                </div>
+                <div style="margin-top: 5px;">
+                    <table style="border: none">
+                        <tr>
+                            <td style="min-width: 60px;">Phone</td>
+                            <td>{{c.phone}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td>{{c.mail}}</td>
+                        </tr>
+                        <tr>
+                            <td>Web</td>
+                            <td>{{c.web}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+    <div class="flex justify-end gap-1">
+        <p-button (onClick)="openPrintDialog()">Print</p-button>
+    </div>
+</p-dialog>

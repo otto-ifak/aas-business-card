@@ -1,0 +1,27 @@
+<div style="width: 100%;">
+  <app-contact-dialog [(contact)]="editedContact" (save)="saveContact()"></app-contact-dialog>
+  <app-card-dialog [contact]="shownContact()" (onClosed)="shownContact.set(null)"></app-card-dialog>
+  <p-table [value]="contacts()">
+    <ng-template #caption>
+      <p-button (onClick)="newContact()">New Contact</p-button>
+    </ng-template>
+    <ng-template #header>
+      <tr>
+        <th>Name</th>
+        <th>Mail</th>
+        <th>Actions</th>
+      </tr>
+    </ng-template>
+    <ng-template #body let-contact>
+      <tr>
+        <td>{{ contact.firstName }}</td>
+        <td>{{ contact.mail }}</td>
+        <td>
+          <p-button (onClick)="editContact(contact)">Edit</p-button>
+          <p-button (onClick)="deleteContact(contact)" >Delete</p-button>
+          <p-button (onClick)="shownContact.set(contact)">View</p-button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

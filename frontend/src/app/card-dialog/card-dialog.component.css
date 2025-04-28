@@ -1,0 +1,13 @@
+.card-container {
+    background-color: white;
+    color: black;
+    font-size: small;
+    width: 8.5cm;
+    height: 5.5cm;
+    padding: 5px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: large;
+}
