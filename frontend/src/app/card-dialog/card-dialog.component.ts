@@ -19,7 +19,7 @@ export class CardDialogComponent {
   @Output() onClosed = new EventEmitter()
 
   url = computed(() => {
-    return `${window.location}${this.contact()?.id}`
+    return `${window.location}${this.contact()?.id}/submodel`
   })
 
   public openPrintDialog() {
