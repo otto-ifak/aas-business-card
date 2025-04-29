@@ -1,23 +1,12 @@
 services:
   backend:
-    image: gradle:8.13
-    working_dir: /backend
-    command: sleep infinity
+    build: .
     ports:
     - "8080:8080"
-    volumes:
-      - ./backend:/backend
-      - ./frontend/dist/aas-business-card/browser:/backend/src/main/resources/static:ro
     environment:
       - POSTGRES_PASSWORD=passwd
       - POSTGRES_USER=app
       - POSTGRES_DB=app_db
-  frontend:
-    image: node:23.11
-    working_dir: /frontend
-    command: sleep infinity
-    volumes:
-      - ./frontend:/frontend
   db:
     image: postgres:17
     volumes:

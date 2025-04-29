@@ -2,20 +2,30 @@
 
 # AAS Business Card
 
-## Start Containers
+## Example Setup
+Please refer to `compose.prod.yml` for an example.
+Update `POSTGRES_PASSWORD` or provide an `.env` file.
+Then you can start the server using:
+```sh
+docker compose -f compose.prod.yml up
+```
+Finally visit http://localhost:8080.
+
+## Development
+
 Start container:
 ```sh
 docker compose up
 ```
 
-## Build Java Script
+Build Java Script:
 ```sh
 docker compose exec frontend bash
 npm run build
 ```
 Alternatively run `npm run watch` for auto-rebuild
 
-## Start Server
+Start Server
 
 ```sh
 docker compose exec backend bash
