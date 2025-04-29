@@ -1,3 +1,5 @@
+[![Tests](https://github.com/otto-ifak/aas-business-card/actions/workflows/ci.yml/badge.svg)](https://github.com/otto-ifak/aas-business-card/actions/workflows/ci.yml)
+
 # AAS Business Card
 
 ## Start Containers
