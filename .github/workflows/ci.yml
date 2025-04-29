@@ -13,4 +13,4 @@ jobs:
       - name: Build the Docker image
         run: docker compose -f compose.prod.yml build
       - name: Run integration Tests
-        run: docker compose up -d && ./bin/integratin-test.py
+        run: docker compose up -d && ./bin/integration_test.py
