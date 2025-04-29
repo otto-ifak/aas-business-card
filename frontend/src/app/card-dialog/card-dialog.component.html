@@ -1,16 +1,17 @@
 <p-dialog header="Business Card" [modal]="true" [style]="{ width: '5cm;' }" [visible]="contact() != null"
     (visibleChange)="onClosed.emit()">
-    <p>
-        Here is your business card.
-        You may either want to print it directly or copy the QR code into your own template.
-    </p>
     @if(contact()){
     @let c = contact()!;
+    <p>
+        Here is your business card.<br>
+        You may either want to print it directly or copy the QR code into your own template.<br>
+        The QR code links to <a target="_blank" [href]="url()">{{url()}}</a>
+    </p>
     <div class="card-container">
         <div class="flex place-items-center gap-5">
             <div>
                 <img src="/aas.png" style="width: 120px; height: 70px">
-                <app-qr-code style="position: relative; left: 10px; top: -10px" [value]="makeUrl(c)"></app-qr-code>
+                <app-qr-code style="position: relative; left: 10px; top: -10px" [value]="url()"></app-qr-code>
             </div>
             <div>
                 <div>

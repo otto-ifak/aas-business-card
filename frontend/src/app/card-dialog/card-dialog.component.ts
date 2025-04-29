@@ -1,4 +1,4 @@
-import { Component, EventEmitter, input, Output } from '@angular/core';
+import { Component, computed, EventEmitter, input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
@@ -18,9 +18,9 @@ export class CardDialogComponent {
   contact = input<Contact | null>(null)
   @Output() onClosed = new EventEmitter()
 
-  public makeUrl(contact: Contact) {
-    return `${window.location}/contacts/${contact.id}/aas`
-  }
+  url = computed(() => {
+    return `${window.location}${this.contact()?.id}`
+  })
 
   public openPrintDialog() {
     window.print()
