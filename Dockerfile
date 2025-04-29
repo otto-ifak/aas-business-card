@@ -8,4 +8,4 @@ WORKDIR /backend
 COPY backend /backend
 COPY --from=build-frontend /frontend/dist/aas-business-card/browser /backend/src/main/resources/static
 RUN ./gradlew build -x test
-ENTRYPOINT [ "gradlew", "bootRun" ]
+ENTRYPOINT [ "./gradlew", "bootRun" ]
