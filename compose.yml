@@ -1,6 +1,6 @@
 services:
   backend:
-    build: backend
+    image: gradle:8.13
     working_dir: /backend
     command: sleep infinity
     ports:
