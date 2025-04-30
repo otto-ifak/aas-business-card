@@ -12,6 +12,8 @@ services:
       - POSTGRES_PASSWORD=passwd
       - POSTGRES_USER=app
       - POSTGRES_DB=app_db
+      - APP_USER=user
+      - APP_PASSWORD=password
   frontend:
     image: node:23.11
     working_dir: /frontend

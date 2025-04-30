@@ -7,6 +7,8 @@ services:
       - POSTGRES_PASSWORD=passwd
       - POSTGRES_USER=app
       - POSTGRES_DB=app_db
+      - APP_USER=user
+      - APP_PASSWORD=password
     healthcheck:
       test: "curl --fail --silent localhost:8080/actuator/health | grep UP"
       interval: 5s

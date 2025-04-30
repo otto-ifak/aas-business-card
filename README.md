@@ -1,6 +1,6 @@
 [![Tests](https://github.com/otto-ifak/aas-business-card/actions/workflows/ci.yml/badge.svg)](https://github.com/otto-ifak/aas-business-card/actions/workflows/ci.yml)
 
-# Business Cards powered by the Asset Administration Shell
+# AAS Business Card
 
 **Supercharge Your Business Cards with the Power of Digitalization**  
 
@@ -17,7 +17,9 @@ Here’s how to elevate your contact sharing:
 3. **Print and Impress**  
    Embed the QR code onto your business card. Now, anyone can scan it to instantly access your complete contact information — digitally structured, semantically rich, and fully aligned with the AAS framework.  
 
-![AAS Business Card](doc/screenshot.png)
+<p align="center">
+   <img src="doc/screenshot.png" alt="AAS Business Card" width="300"/>
+</p>
 
 Welcome to the next generation of networking!
 
@@ -30,7 +32,7 @@ Welcome to the next generation of networking!
 
 ## Setup
 Please refer to `compose.prod.yml` for an example.
-Update `POSTGRES_PASSWORD` or provide an `.env` file.
+Update `POSTGRES_PASSWORD` and `APP_PASSWORD` or provide an `.env` file.
 Then you can start the server using:
 ```sh
 docker compose -f compose.prod.yml up
